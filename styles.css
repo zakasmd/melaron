@@ -642,11 +642,11 @@ footer {
 }
 
 .form-select {
-    width: 135px; /* Slightly wider to fit text and dropdown arrow */
-    padding-left: 10px; /* Reduce left padding to center text better */
-    padding-right: 5px; /* Reduce right padding to leave room for arrow */
-    text-align: center;
+    width: 140px;
+    padding: 16px 10px;
+    text-align: left;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .form-select option {
