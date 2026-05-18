@@ -17,12 +17,24 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: 'Server configuration error' });
     }
 
-    const message = `
-🔔 *Yeni Konsultasiya Müraciəti!* 🔔
+    const escapeHTML = (str) => {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    };
 
-👤 *Ad:* ${name}
-📞 *Nömrə:* ${phone}
-🏢 *Biznes Növü:* ${businessType}
+    const safeName = escapeHTML(name);
+    const safePhone = escapeHTML(phone);
+    const safeBusiness = escapeHTML(businessType);
+
+    const message = `
+🔔 <b>Yeni Konsultasiya Müraciəti!</b> 🔔
+
+👤 <b>Ad:</b> ${safeName}
+📞 <b>Nömrə:</b> ${safePhone}
+🏢 <b>Biznes Növü:</b> ${safeBusiness}
     `;
 
     try {
@@ -34,7 +46,7 @@ export default async function handler(req, res) {
             body: JSON.stringify({
                 chat_id: chatId,
                 text: message,
-                parse_mode: 'Markdown'
+                parse_mode: 'HTML'
             })
         });
 
