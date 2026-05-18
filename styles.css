@@ -642,8 +642,8 @@ footer {
 }
 
 .form-select {
-    width: 140px;
-    padding: 16px 10px;
+    width: 145px;
+    padding: 16px 30px 16px 16px;
     text-align: left;
     flex-shrink: 0;
     cursor: pointer;
