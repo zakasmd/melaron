@@ -205,7 +205,11 @@ p {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 32px;
+}
+
+.nav-links .btn-primary-small {
+    margin-left: -16px; /* Offset the button's internal padding to balance visual distance */
 }
 
 .nav-links a:not(.btn-primary-small) {
