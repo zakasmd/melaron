@@ -57,19 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(5, 5, 8, 0.95)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
-            }
+            navLinks.classList.toggle('mobile-active');
         });
     }
 

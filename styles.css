@@ -523,7 +523,25 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* simple mobile hide for now */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 8, 0.98);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        text-align: center;
+        gap: 20px;
+    }
+    .nav-links.mobile-active {
+        display: flex;
+    }
+    .nav-links a {
+        width: 100%;
+        padding: 10px 0;
     }
     .mobile-menu-btn {
         display: block;
@@ -617,6 +635,11 @@ footer {
     font-size: 16px; /* Prevents iOS auto-zoom on focus */
     outline: none;
     transition: var(--transition);
+}
+
+.form-select {
+    width: 120px; /* Fixed width for the select so input takes the rest */
+    flex-shrink: 0;
 }
 
 .form-select option {

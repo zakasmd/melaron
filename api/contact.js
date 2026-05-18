@@ -51,12 +51,13 @@ export default async function handler(req, res) {
         });
 
         if (!response.ok) {
-            throw new Error('Telegram API responded with an error');
+            const errText = await response.text();
+            throw new Error(`Telegram xətası: ${response.status} - ${errText}`);
         }
 
         res.status(200).json({ success: true });
     } catch (error) {
-        console.error('Telegram error:', error);
-        res.status(500).json({ error: 'Failed to send message to Telegram' });
+        console.error('Telegram error:', error.message);
+        res.status(500).json({ error: error.message });
     }
 }
