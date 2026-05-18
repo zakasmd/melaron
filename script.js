@@ -112,9 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage.className = 'form-message';
             formMessage.textContent = '';
 
+            const countryCode = document.getElementById('countryCode').value;
+            const phoneVal = document.getElementById('phone').value;
+            const fullPhone = `${countryCode} ${phoneVal}`;
+
             const formData = {
                 name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
+                phone: fullPhone,
                 businessType: document.getElementById('businessType').value || 'Qeyd olunmayıb'
             };
 
@@ -130,10 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     formMessage.classList.add('success');
                     consultForm.reset();
                 } else {
-                    throw new Error('Xəta baş verdi');
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error('Server error:', errorData);
+                    throw new Error(errorData.error || 'Server xətası baş verdi.');
                 }
             } catch (error) {
-                formMessage.textContent = 'Təəssüf ki, müraciət göndərilə bilmədi. Zəhmət olmasa WhatsApp vasitəsilə yazın.';
+                console.error('Submission error:', error);
+                formMessage.textContent = `Təəssüf ki, xəta baş verdi: ${error.message}. Zəhmət olmasa WhatsApp ilə yazın.`;
                 formMessage.classList.add('error');
             } finally {
                 submitBtn.textContent = 'Göndər';

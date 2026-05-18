@@ -196,12 +196,12 @@
                 <div class="footer-contact">
                     <h3>Bizimlə Əlaqə</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+994503471274">+994 50 347 12 74</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+994503471271">+994 50 347 12 71</a></li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:sales@melaronagency.com">sales@melaronagency.com</a></li>
                         <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/melaronagency" target="_blank">@melaronagency</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Azərbaycan (Remote Worldwide)</li>
                     </ul>
-                    <a href="https://wa.me/994503471274" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ilə Yaz</a>
+                    <a href="https://wa.me/994503471271" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ilə Yaz</a>
                 </div>
             </div>
             <div class="footer-bottom text-center">
@@ -224,7 +224,16 @@
                 </div>
                 <div class="input-group">
                     <label for="phone">Nömrəniz *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+994 -- --- -- --">
+                    <div style="display: flex; gap: 10px;">
+                        <select id="countryCode" name="countryCode" class="form-select">
+                            <option value="+994" selected>+994 (AZ)</option>
+                            <option value="+90">+90 (TR)</option>
+                            <option value="+1">+1 (US)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+7">+7 (RU)</option>
+                        </select>
+                        <input type="number" id="phone" name="phone" required placeholder="50 347 12 71" inputmode="numeric" pattern="[0-9]*" style="flex: 1;">
+                    </div>
                 </div>
                 <div class="input-group">
                     <label for="businessType">Biznes Növü (Opsional)</label>

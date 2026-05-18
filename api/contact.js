@@ -9,8 +9,8 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Ad və nömrə mütləqdir.' });
     }
 
-    const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    const botToken = process.env.TELEGRAM_BOT_TOKEN ? process.env.TELEGRAM_BOT_TOKEN.replace(/["']/g, '').trim() : '';
+    const chatId = process.env.TELEGRAM_CHAT_ID ? process.env.TELEGRAM_CHAT_ID.replace(/["']/g, '').trim() : '';
 
     if (!botToken || !chatId) {
         console.error('Missing Telegram Environment Variables');
