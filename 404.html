@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Səhifə Tapılmadı | Melaron Agency</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Axtardığınız səhifə mövcud deyil və ya ünvanı dəyişdirilib. Melaron ana səhifəsinə qayıdaraq xidmətlərimizlə tanış ola bilərsiniz.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo-m.png" type="image/png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 40px var(--primary-glow);
+        }
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .error-desc {
+            max-width: 500px;
+            margin: 0 auto 32px auto;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .error-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .error-code { font-size: 5.5rem; }
+            .error-title { font-size: 1.6rem; }
+            .error-links { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-bg-glow" style="top: 30%;"></div>
+    
+    <div class="error-page">
+        <div class="container">
+            <a href="/" class="logo" style="justify-content: center; margin-bottom: 24px;">
+                <picture>
+                    <source srcset="logo-m.webp" type="image/webp">
+                    <img src="logo-m.png" alt="Melaron Logo" width="36" height="36" loading="eager">
+                </picture>
+                <span>Melaron</span>
+            </a>
+            
+            <div class="error-code">404</div>
+            <h1 class="error-title">Axtardığınız Səhifə Tapılmadı</h1>
+            <p class="error-desc">Keçid etdiyiniz səhifə silinmiş, adı dəyişdirilmiş və ya müvəqqəti olaraq əlçatmaz ola bilər. Narahat olmayın, sizə kömək edə bilərik:</p>
+            
+            <div class="error-links">
+                <a href="/" class="btn-primary"><i class="fas fa-home" style="margin-right: 8px;"></i> Ana Səhifəyə Qayıt</a>
+                <a href="/#xidmetler" class="btn-secondary"><i class="fas fa-th-large" style="margin-right: 8px;"></i> Xidmətlərimiz</a>
+                <a href="https://wa.me/994503471271" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="margin-top: 0;"><i class="fab fa-whatsapp"></i> WhatsApp ilə Yaz</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

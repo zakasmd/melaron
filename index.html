@@ -17,29 +17,47 @@
     <meta name="geo.placename" content="Baku">
     <meta name="language" content="Azerbaijani">
 
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="az_AZ">
     <meta property="og:url" content="https://melaronagency.com/">
     <meta property="og:site_name" content="Melaron Agency">
     <meta property="og:title" content="Melaron — Veb Sayt Yığılması, Süni İntellekt (AI) Videoları və Avtomatlaşdırma">
     <meta property="og:description" content="Biznesiniz üçün modern, sürətli veb saytlar yığır, satış gətirən süni intellekt (AI) videoları hazırlayır və müştəri xidmətlərini tam avtomatlaşdırırıq.">
-    <meta property="og:image" content="https://melaronagency.com/logo%20circle.png.png">
+    <meta property="og:image" content="https://melaronagency.com/logo-circle.png">
     <meta property="og:image:alt" content="Melaron - Veb Sayt Yığılması və AI Avtomatlaşdırma">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Melaron — Veb Sayt Yığılması, Süni İntellekt (AI) Videoları və Avtomatlaşdırma">
     <meta name="twitter:description" content="Peşəkar veb sayt yığdırmaq, süni intellekt videoları hazırlamaq və satışlarınızı artırmaq üçün Melaron-a müraciət edin.">
-    <meta name="twitter:image" content="https://melaronagency.com/logo%20circle.png.png">
+    <meta name="twitter:image" content="https://melaronagency.com/logo-circle.png">
     
-    <!-- Favicon -->
-    <link rel="icon" href="logo only M.png.png" type="image/png">
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="logo-m.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo-m.png">
     
-    <!-- Google Fonts & FontAwesome -->
+    <!-- Performance: Preconnect & DNS-Prefetch to eliminate render blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts & Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Non-blocking FontAwesome Loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
@@ -59,8 +77,8 @@
           "@id": "https://melaronagency.com/#organization",
           "name": "Melaron — AI Avtomatlaşdırma və Rəqəmsal Marketinq Agentliyi",
           "url": "https://melaronagency.com/",
-          "logo": "https://melaronagency.com/logo%20only%20M.png.png",
-          "image": "https://melaronagency.com/logo%20circle.png.png",
+          "logo": "https://melaronagency.com/logo-m.png",
+          "image": "https://melaronagency.com/logo-circle.png",
           "description": "Bakıda peşəkar veb saytların yığılması, süni intellekt (AI) əsaslı video və reklam çarxlarının hazırlanması, satış funnelləri və CRM avtomatlaşdırması xidmətləri.",
           "telephone": "+994503471271",
           "email": "sales@melaronagency.com",
@@ -134,7 +152,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo only M.png.png" alt="Melaron Logo - Veb Sayt Yığılması və AI Avtomatlaşdırma">
+                <picture>
+                    <source srcset="logo-m.webp" type="image/webp">
+                    <img src="logo-m.png" alt="Melaron Logo - Veb Sayt Yığılması və AI Avtomatlaşdırma" width="36" height="36" loading="eager" decoding="async">
+                </picture>
                 <span>Melaron</span>
             </a>
             <div class="nav-links">
@@ -145,7 +166,7 @@
                 <a href="#haqqimizda">Haqqımızda</a>
                 <a href="#elaqe" class="btn-primary-small">Əlaqə</a>
             </div>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" aria-label="Menyunu aç">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -153,7 +174,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <video autoplay muted loop playsinline class="hero-bg-video" onended="this.play()">
+        <video autoplay muted loop playsinline class="hero-bg-video" onended="this.play()" preload="auto">
             <source src="video.mp4" type="video/mp4">
         </video>
         <div class="hero-bg-overlay"></div>
@@ -238,7 +259,10 @@
                     </ul>
                 </div>
                 <div class="why-us-image">
-                    <img src="logo circle.png.png" alt="Melaron Agency - Süni İntellekt və Veb Sayt Agentliyi" class="floating-logo">
+                    <picture>
+                        <source srcset="logo-circle.webp" type="image/webp">
+                        <img src="logo-circle.png" alt="Melaron Agency - Süni İntellekt və Veb Sayt Agentliyi" class="floating-logo" width="300" height="300" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -365,7 +389,10 @@
             <div class="footer-grid reveal">
                 <div class="footer-brand">
                     <div class="logo">
-                        <img src="logo only M.png.png" alt="Melaron Logo">
+                        <picture>
+                            <source srcset="logo-m.webp" type="image/webp">
+                            <img src="logo-m.png" alt="Melaron Logo" width="36" height="36" loading="lazy" decoding="async">
+                        </picture>
                         <span>Melaron</span>
                     </div>
                     <p>Bizneslərin gələcəyini süni intellekt, modern veb saytlar və avtomatlaşdırma ilə şəkilləndiririk.</p>
@@ -375,10 +402,10 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+994503471271">+994 50 347 12 71</a></li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:sales@melaronagency.com">sales@melaronagency.com</a></li>
-                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/melaronagency" target="_blank">@melaronagency</a></li>
+                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/melaronagency" target="_blank" rel="noopener noreferrer">@melaronagency</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Azərbaycan (Remote Worldwide)</li>
                     </ul>
-                    <a href="https://wa.me/994503471271" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ilə Yaz</a>
+                    <a href="https://wa.me/994503471271" target="_blank" rel="noopener noreferrer" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ilə Yaz</a>
                 </div>
             </div>
             <div class="footer-bottom text-center">
@@ -422,6 +449,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
